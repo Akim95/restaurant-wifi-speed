@@ -1,0 +1,99 @@
+// Primary color
+$primary-color: #607D8B;
+
+// Secondary color
+$secondary-color: #FF5252;
+
+// Primary text color
+$primary-text: #212121;
+
+// Secondary text color
+$secondary-text: #727272;
+
+// Import Materialize Sass
+@import "{poetic:materialize-scss}/bower_components/materialize/sass/components/_color.scss";
+@import "{poetic:materialize-scss}/bower_components/materialize/sass/materialize.scss";
+
+// Body
+body {
+  background-color: #FAFAFA;
+}
+
+// Collection
+.collection {
+  border-top: none;
+}
+
+// Speed value
+.speed-value {
+  color: $primary-text;
+  font-size: 1.25em;
+}
+
+// Name
+.name {
+  color: $primary-text;
+  font-size: 0.93em;
+  font-weight: bold;
+}
+
+// Address
+.address {
+  color: $secondary-text;
+  font-size: 0.87em;
+}
+
+// Form
+.insert-form {
+  margin-top: 20px;
+}
+
+// Nav font bold
+.bold {
+  font-weight: bold;
+}
+
+// Accounts button
+#at-nav-button {
+  height: 35px;
+  line-height: 35px;
+}
+
+#at-meteor-developer {
+  background-color: #de4f4f;
+  margin-bottom: 20px;
+}
+
+#at-google {
+  margin-bottom: 5px;
+}
+// Nav
+.nav-bar {
+  margin-bottom: 0px;
+  text-transform: uppercase;
+}
+
+.desktop-nav {
+  margin-right: 10px;
+}
+
+.nav-button {
+  &:hover {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.header {
+  font-size: 0.93em;
+  font-weight: bold;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// h5 font
+.h5-secondary-color {
+  color: #FF5252;
+}

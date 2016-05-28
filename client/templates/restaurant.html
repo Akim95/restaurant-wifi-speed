@@ -1,0 +1,46 @@
+<template name="Restaurant">
+  <!-- FlashMessages -->
+  {{> materializeFlashMessages}}
+
+  <!-- Create new button -->
+  {{#if currentUser}}
+  <div class="fixed-action-btn" style="bottom: 35px; right: 24px;">
+    <a class="btn-floating btn-large waves-effect waves-light" href="{{pathFor 'new'}}"><i class="material-icons">add</i></a>
+  </div>
+  {{/if}}
+
+  <!-- Restaurants collection -->
+  <ul class="collection">
+    {{#each restaurants}}
+    <li class="collection-item avatar">
+      <img src="{{image}}" alt="" class="circle" />
+      <span class="name">{{name}}</span>
+      {{#if isOwner}}
+      <a class="confirm confirm-image right modal-trigger-confirm" href="#confirm-delete">&times;</a>
+      {{/if}}
+      <p class="address">{{address.line1}} {{address.line2}}, {{address.city}}, {{address.postcode}}, {{address.state}}.</p>
+      <a href="https://www.google.com.my/maps/search/{{location}}"><i class="material-icons">location_on</i>Direction</a>
+      <p class="speed-value right"><i class="material-icons">arrow_drop_down</i>{{speedValue}} Mbps</p> <br>
+    </li>
+    {{/each}}
+  </ul>
+
+  {{#if loadCount}}
+  <div class="center">
+    <a href="#" class="loadmore"><i class="material-icons">sync</i></a>
+  </div>
+  {{/if}}
+
+  <!-- Modal Structure -->
+  <div id="confirm-delete" class="modal">
+    <div class="modal-content">
+      <h4>Delete Restaurant</h4>
+      <p>Are you sure you want to delete this?</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="delete delete-image modal-action modal-close waves-effect waves-grey btn-flat">Yes</a>
+      <a href="#" class="modal-action modal-close waves-effect waves-grey btn-flat">No</a>
+    </div>
+  </div>
+
+</template>

@@ -1,0 +1,28 @@
+<template name="editRestaurant">
+  <!-- Must be logged in -->
+  {{> ensureSignedIn }}
+
+  {{#if isOwner}}
+  <div class="insert-form">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          {{#autoForm collection="Restaurants" doc=restaurant id="editResForm" type="update"}}
+          {{> afQuickField name='name' template='materialize'}}
+          {{> afQuickField name='address.line1' template='materialize'}}
+          {{> afQuickField name='address.line2' template='materialize'}}
+          {{> afQuickField name='address.city' template='materialize'}}
+          {{> afQuickField name='address.postcode' template='materialize'}}
+          {{> afQuickField name='address.state' template='materialize'}}
+          {{> afQuickField name="location"}}
+          <br>
+          <button type="submit" class="waves-effect waves-light btn-large">Submit</button>
+          {{/autoForm}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{else}}
+    <h2 class="center">no authorization</h2>
+  {{/if}}
+</template>

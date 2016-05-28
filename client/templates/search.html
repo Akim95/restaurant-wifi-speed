@@ -1,0 +1,15 @@
+<template name="Search">
+  <!-- Restaurants collection -->
+  <ul class="collection">
+    <li class="collection-item">{{> esInput index="restaurants" renderSuggestion=suggestion placeholder="Search" }}</li>
+    {{#esEach index="restaurants"}}
+    <li class="collection-item avatar">
+      <img src="{{image}}" alt="" class="circle" />
+      <span class="name">{{name}}</span>
+      <p class="address">{{address.line1}} {{address.line2}}, {{address.city}}, {{address.postcode}}, {{address.state}}.</p>
+      <a href="https://www.google.com.my/maps/search/{{location}}"><i class="material-icons">location_on</i>Direction</a>
+      <p class="speed-value right"><i class="material-icons">arrow_drop_down</i>{{speedValue}} Mbps</p> <br>
+    </li>
+    {{/esEach}}
+  </ul>
+</template>

@@ -1,0 +1,40 @@
+<template name="nav">
+
+  <nav class="nav-bar">
+    <div class="nav-wrapper">
+      <!-- Desktop nav -->
+      <div class="desktop-nav">
+        <ul class="right hide-on-med-and-down">
+          <li class="bold"><a href="/">Home</a></li>
+          <li><a href="{{pathFor 'search'}}">Search</a></li>
+          <li><a class="modal-trigger" href="#modal-ver">About</a></li>
+          {{#if currentUser}}
+          <li><a href="{{pathFor 'account'}}">{{userName}}</a></li>
+          {{/if}}
+          <li class="nav-button">{{> atNavButton }}</li>
+          <!-- <li><a class="mobile-nav" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a></li> -->
+        </ul>
+      </div>
+
+      <!-- Mobile nav -->
+      <ul id="nav-mobile" class="side-nav">
+        <li class="bold"><a href="/">Home</a></li>
+        <li><a href="{{pathFor 'search'}}">Search</a></li>
+        <li><a class="modal-trigger" href="#modal-ver">About</a></li>
+        {{#if currentUser}}
+        <li><a href="{{pathFor 'account'}}">{{userName}}</a></li>
+        {{/if}}
+        <li>{{> atNavButton }}</li>
+      </ul>
+      <a class="button-collapse mobile-nav" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+    </div>
+  </nav>
+
+  <div id="modal-ver" class="modal">
+    <div class="modal-content">
+      <p class="center">Version 1.0.0-beta</p>
+      <p class="center"><a href="mailto:akimlinux@gmail.com" target="_top">Bug Report</a></p>
+    </div>
+  </div>
+
+</template>
